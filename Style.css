@@ -1,0 +1,86 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+*{
+    font-size: 100%;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+:root{
+    --title-color: #09008d;
+    --simpletext-color: #000;
+    --bg-color: #fff; /*DarkMode: #212529*/
+    --bg-img-header: url("Midias/FundoLousaPadrao.png");
+    --bg-sidebar-color: #31463B;
+    --bg-img-calc: url("Midias/FundoLousaPadrao.png");
+
+}
+body{
+    background-color: var(--bg-color);
+    font-family: "Reggae One", Arial, Helvetica, sans-serif;
+}
+#logoContainer{
+    height: 11vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: var(--bg-img-header) no-repeat bottom left;
+    background-size: cover;
+}
+#Logo{
+    width: 300px;
+}
+#NavList{
+    height: 7vh;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    background: url("Midias/FundoMadeira.jpg") no-repeat center center;
+    background-size: cover;
+}
+#NavList a:link, #NavList a:visited{
+    font-size: 1.1rem;
+    color: #fff;
+    background-color: #0c00b1;
+    padding: 0.3rem 3rem;
+    border-radius: 20px;
+    text-align: center;
+}
+#NavList a:hover{
+    color: #fff;
+    text-shadow: #0080ff 0 0 0.3rem;
+    background-color: #00006a;
+    transform: scale(1.05);
+}
+#mainContainer{
+    display: flex;
+    flex-flow: row;
+}
+#sidebarContainer{
+    flex: 25%;
+    height: 90vh;
+    background-color: var(--bg-sidebar-color);
+    
+}
+#calcContainer{
+    flex: 75%
+}
+#calcArea{
+    background: var(--bg-img-calc) no-repeat center right;
+    margin: 2% 5%;
+    background-size: cover;
+    border: #C7A788 solid 5px;
+    width: 65vw;
+    height: 30vh;
+}
+#resultArea{
+    background: var(--bg-img-calc) no-repeat bottom right;
+    margin: 2% 5%;
+    background-size: 100% 100%;
+    border: #C7A788 solid 5px;
+    width: 65vw;
+    height: 40vh;
+}
+
