@@ -101,9 +101,37 @@
                     <button class="btnOperators" onclick="">%</button>
                     <button class="btnOperators" onclick="">Rest</button>
                 </div>
-            </div>
-            <div id="tableContainer">
-                
+                <div id="tableDescriptionContainer">
+                    <h3>Guia de uso das Funções</h3>
+                    <p>Selecione uma função e veja como usar:</p>
+                    <div id="buttonListDescription">
+                        <button id="botao1" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao2" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao3" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao4" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao5" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao6" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao7" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao8" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao9" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao10" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <!--Se precisar adicionar mais botões, é só copiar e colar. Só precisa mudar o número do Id, pra adicionar, e também adicionar no js-->
+                    </div>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Nome</th>
+                                <th>Descrição</th>
+                                <th>Como usar</th>
+                            </tr>
+                        </thead>
+                        <tbody id="localDescription">
+                            <tr>
+                                <!--Os valores serão inseridos via js-->
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
         </main>
         <!--Rodapé do site, com as informações do grupo-->
