@@ -25,6 +25,13 @@ window.onload = function(){
     startPage();
 }
 
+function openFunctionMenu(){
+    document.getElementById("sidebarContainer").style.display= "block";
+}
+function closeFunctionMenu(){
+    document.getElementById("sidebarContainer").style.display= "none";
+}
+
 //Lista de valores para a coluna "Nome"
 let nameText = {
     botao1:"Função 1",
