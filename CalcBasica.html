@@ -74,42 +74,50 @@
             <!--Conteúdo principal, com a calculadora e os botões para inserir valores-->
             <div id="mainContent">
                 <h1>Calculadora Básica</h1>
-                <!--Calculadora com as áreas de entrada e retorno de valores-->
                 <div id="blackBoard">
                     <h3>Digite o cálculo:</h3>
-                    <div id="calcInput"></div>
+                    <div id="calcInput">
+                        <input type="text" id="display" disabled>
+                    </div>
                     <h3>Resultado:</h3>
-                    <div id="resultOutput"></div>
+                    <div id="resultOutput">
+                        <input type="text" id="resultado" disabled>
+                    </div>
                 </div>
+<<<<<<< HEAD
                 <!--Item usado para o menu mobile-->
                 <button id="openFunctionList" onclick="openFunctionMenu()">Lista de funções</button>
                 <!--Container de botões da calculadora, com os números, operadores e funções principais-->
+=======
+        
+>>>>>>> e7a77a0abfbf86b08164129d6aecf11383959f03
                 <div id="buttonList">
                     <!--1 Linha-->
-                    <button class="btnNumbers" onclick="">7</button>
-                    <button class="btnNumbers" onclick="">8</button>
-                    <button class="btnNumbers" onclick="">9</button>
-                    <button class="btnControls" onclick="">C</button>
-                    <button class="btnControls" onclick="">⌦</button>
+                    <button class="btnNumbers" onclick="appendValue('7')">7</button>
+                    <button class="btnNumbers" onclick="appendValue('8')">8</button>
+                    <button class="btnNumbers" onclick="appendValue('9')">9</button>
+                    <button class="btnControls" onclick="clearDisplay()">C</button>
+                    <button class="btnControls" onclick="deleteLast()">⌦</button>
                     <!--2 Linha-->
-                    <button class="btnNumbers" onclick="">4</button>
-                    <button class="btnNumbers" onclick="">5</button>
-                    <button class="btnNumbers" onclick="">6</button>
-                    <button class="btnOperators" onclick="">+</button>
-                    <button class="btnOperators" onclick="">-</button>
+                    <button class="btnNumbers" onclick="appendValue('4')">4</button>
+                    <button class="btnNumbers" onclick="appendValue('5')">5</button>
+                    <button class="btnNumbers" onclick="appendValue('6')">6</button>
+                    <button class="btnOperators" onclick="appendValue('+')">+</button>
+                    <button class="btnOperators" onclick="appendValue('-')">-</button>
                     <!--3 Linha-->
-                    <button class="btnNumbers" onclick="">1</button>
-                    <button class="btnNumbers" onclick="">2</button>
-                    <button class="btnNumbers" onclick="">3</button>
-                    <button class="btnOperators" onclick="">x</button>
-                    <button class="btnOperators" onclick="">÷</button>
+                    <button class="btnNumbers" onclick="appendValue('1')">1</button>
+                    <button class="btnNumbers" onclick="appendValue('2')">2</button>
+                    <button class="btnNumbers" onclick="appendValue('3')">3</button>
+                    <button class="btnOperators" onclick="appendValue('*')">x</button>
+                    <button class="btnOperators" onclick="appendValue('/')">÷</button>
                     <!--4 Linha-->
-                    <button class="btnNumbers" onclick="">0</button>
-                    <button class="btnNumbers" onclick="">,</button>
-                    <button class="btnControls" onclick="">=</button>
-                    <button class="btnOperators" onclick="">%</button>
-                    <button class="btnOperators" onclick="">Rest</button>
+                    <button class="btnNumbers" onclick="appendValue('0')">0</button>
+                    <button class="btnNumbers" onclick="appendValue('.')">,</button>
+                    <button class="btnControls" onclick="calculate()">=</button>
+                    <button class="btnOperators" onclick="appendValue('/100*')">%</button>
+                    <button class="btnOperators" onclick="appendValue('%')">Rest</button>
                 </div>
+            </div>
                 <div id="tableDescriptionContainer">
                     <h3>Guia de uso das Funções</h3>
                     <p>Selecione uma função e veja como usar:</p>
@@ -151,5 +159,6 @@
         <!--Area de Import dos scripts utilizados-->
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
         <script src="js/colorScript.js" type="text/javascript"></script>
+        <script src="js/Script.js" type="text/javascript"></script>
     </body>
 </html>
