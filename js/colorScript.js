@@ -20,9 +20,21 @@ function colorBlindMode(){
     page.classList.remove("defaultMode", "darkMode");
     page.classList.add("colorBlindMode");
 }
-//Função que detecta quando o site é iniciado e chama a função de aplicar cores
+function screenWidthCheck(){
+    let width = window.innerWidth;
+
+    if(width>970){
+        document.getElementById("sidebarContainer").style.display= "block";
+    }
+    else{
+        document.getElementById("sidebarContainer").style.display= "none";
+    }
+}
+//Função que detecta quando o site é iniciado e chama a função de aplicar cores e a de checar o tamanho da tela
+window.addEventListener("resize", screenWidthCheck);
 window.onload = function(){
     startPage();
+    screenWidthCheck();
 }
 
 function openFunctionMenu(){

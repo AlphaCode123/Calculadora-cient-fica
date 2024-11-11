@@ -1,0 +1,263 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Mini reset de formatações*/
+*{
+    font-size: 100%;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*Variáveis para cor/img*/
+.defaultMode:root{
+    /*Cores de texto*/
+    --title-color: #55c1ff;
+    --simpletext-color: #000;
+    --text-blackboard: #fff;
+    /*Cores e imagem de fundo*/
+    --bg-color: #fbfbfb;
+    --bg-sidebar-color: #31463B;
+    --bg-input-output-area-color: #31463B;
+    --bg-img-blackboard: url("../Midias/bgBlackboardDefault.png");
+    --border-color: #d5a97c;
+    /*Cores de fundo dos botões*/
+    --bg-function-list-button-color: rgb(67, 135, 175);
+    --bg-number-button-color: #38b6ff;
+    --bg-operator-button-color:#68d3fa;
+    --bg-control-button-color:#002134;
+    /*Cores dos textos dos botões*/
+    --text-function-list-button-color: #000;
+    --text-number-button-color: #000;
+    --text-operator-button-color: #000;
+    --text-control-button-color: #fff;
+    /*Decorações*/
+    --neon-title: #00446c 1px 1px 2px;
+    --text-underline: none;
+    --border-button-hover: #3e47fb 0 0 20px 2px;
+    --bg-button-hover: #4049fa;
+}
+.darkMode:root{
+    /*Cores de texto*/
+    --title-color: #55c1ff;
+    --simpletext-color: #ffffff;
+    --text-blackboard: #fff;
+    /*Cores e imagem de fundo*/
+    --bg-color: #212529;
+    --bg-sidebar-color: #0f0f0f;
+    --bg-input-output-area-color: #323232;
+    --bg-img-blackboard: url("../Midias/bgBlackboardDarkMode.png");
+    --border-color: #d5a97c;
+    /*Cores de fundo dos botões*/
+    --bg-function-list-button-color: #39779a;
+    --bg-number-button-color: #19abff;
+    --bg-operator-button-color:#44cdff;
+    --bg-control-button-color:#002134;
+    /*Cores dos textos dos botões*/
+    --text-function-list-button-color: #000;
+    --text-number-button-color: #000;
+    --text-operator-button-color: #000;
+    --text-control-button-color: #fff;
+    /*Decorações*/
+    --neon-title: #98d9ff 0 0 20px;
+    --text-underline: none;
+    --border-button-hover: #565eff 0 0 20px 2px;
+    --bg-button-hover: #00055c;
+}
+.colorBlindMode:root{
+    /*Cores de texto*/
+    --title-color: #000;
+    --simpletext-color: #000;
+    --text-blackboard: #000;
+    /*Cores e imagem de fundo*/
+    --bg-color: #ffffff; /*DarkMode: #212529*/
+    --bg-sidebar-color: #d5a97c;
+    --bg-input-output-area-color: #cfcfcf;
+    --bg-img-blackboard: url("../Midias/bgBlackboardColorBlindness.png");
+    --border-color: #4a3016;
+    /*Cores de fundo dos botões*/
+    --bg-function-list-button-color: #643200;
+    --bg-number-button-color: #38b6ff;
+    --bg-operator-button-color:#4d0cff;
+    --bg-control-button-color:#002134;
+    /*Cores dos textos dos botões*/
+    --text-function-list-button-color: #fff;
+    --text-number-button-color: #000;
+    --text-operator-button-color: #fff;
+    --text-control-button-color: #fff;
+    /*Decorações*/
+    --neon-title: #fff 0 0 0;
+    --text-underline: underline;
+    --border-button-hover: #2732ff 0 0 10px 3px;
+    --bg-button-hover: #efefff;
+}
+
+/*Configs do site*/
+body{
+    background-color: var(--bg-color);
+    font-family: "Reggae One", Arial, Helvetica, sans-serif;
+    letter-spacing: 0.10rem;
+    color: var(--simpletext-color);
+}
+/*Cabeçalho*/
+#logoContainer {
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../Midias/bgBlackboardDefault.png") no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+#Logo {
+    width: 16.5rem;
+    height: fit-content;
+    margin-left: 20%;
+}
+#dropdownColorMode{
+    margin-left: auto;
+    margin-right: 1%;
+}
+#dropdownColorMode .dropdown-toggle{
+    font-size: 3rem;
+    color: #fff;
+    background: none;
+    border: none;
+}
+#NavListDesktop{
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("../Midias/bgWood.jpg") no-repeat center center;
+    background-size: cover;
+}
+#NavListDesktop a, #NavListDesktop a:visited{
+    font-size: 1.15rem;
+    text-decoration: var(--text-underline);
+    color: #000;
+    margin: 0.5% 2rem;
+    text-align: center;
+    transition: ease 0.5s;
+}
+#NavListDesktop a:hover{
+    font-weight: bolder;
+    text-shadow: #00e1ff 0.1rem 0 0;
+}
+
+/*Configuração da main*/
+main{
+    display: flex;
+    flex-flow: column nowrap;
+}
+/*Conteúdo principal (calculadoras)*/
+main h1{
+    text-shadow: var(--neon-title);
+    font-size: 1.8rem;
+    color: var(--title-color);
+    text-align: center;
+    text-decoration: var(--text-underline);
+    margin: 2% auto 0.9% auto;
+}
+main article{
+    margin: 1.5% 2% ;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 1.2rem;
+}
+
+/*Rodapé*/
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: #171810;
+    margin: 0;
+}
+footer p{
+    color: #db27ff;
+    text-shadow: #ff15cc 0 0 3px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.3rem;
+    padding-top: 1%;
+}
+#bgFooterImg{
+    background: url("../Midias/FooterBgImg.png") no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    height: 75%;
+}
+
+/*Configurações para Responsividade*/
+/*Botão de fechar o menu de funções*/
+#NavListMobile{
+    display: none;
+}
+
+/*Responsividade*/
+/*Tamanho para arrumar o texto da navbar e o título da sidebar*/
+@media (min-width:970px) and (max-width:1232px){
+    #NavListDesktop a, #NavListDesktop a:visited{
+        margin: 0.5% 1rem;
+    }
+}
+/*Tamanho para esconder a navbar e a sidebar*/
+@media (max-width:970px){
+    #NavListDesktop{
+        display: none;
+    }
+    #NavListMobile{
+        display: block;
+        height: 6vh;
+        align-items: center;
+        background: url("../Midias/bgWood.jpg") no-repeat center center;
+        background-size: cover;
+    }
+    #NavListMobile .dropdown-toggle{
+        font-size: 1.5rem;
+        margin-left:3%;
+        color: #000;
+        background: none;
+        border: none;
+    }
+    #NavListMobile .dropdown-menu{
+        width: 70vw;
+    }
+    #NavListMobile a, #NavListMobile a:visited{
+        font-size: 1rem;
+        margin-left: 3%;
+        text-decoration: var(--text-underline);
+        color: #000;
+        transition: ease 0.5s;
+    }
+    #NavListMobile a:hover{
+        font-weight: bolder;
+        text-shadow: #00e1ff 0.1rem 0 0;
+    }
+}
+@media (max-width:600px){
+    body{
+        font-size: 85%;
+    }
+    #Logo{
+        margin-left: 0;
+    }
+    main h1{
+        font-size: 1.35rem;
+        margin: 3% auto;
+    }
+    #NavListMobile .dropdown-menu{
+        width: 90vw;
+    }
+    #NavListMobile a, #NavListMobile a:visited{
+        margin-left: 2%;
+    }
+    main article{
+        margin: 2% 5% ;
+    }
+    footer p{
+        font-size: 0.8rem;
+    }
+    #bgFooterImg{
+        height: 60%;
+    }
+}

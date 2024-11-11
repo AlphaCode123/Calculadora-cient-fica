@@ -1,0 +1,561 @@
+@import url('https://fonts.googleapis.com/css2?family=Reggae+One&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+/*Mini reset de formatações*/
+*{
+    font-size: 100%;
+    font-style: normal;
+    text-decoration: none;
+    margin: 0;
+    padding: 0;
+}
+
+/*Variáveis para cor/img*/
+.defaultMode:root{
+    /*Cores de texto*/
+    --title-color: #55c1ff;
+    --simpletext-color: #000;
+    --text-blackboard: #fff;
+    /*Cores e imagem de fundo*/
+    --bg-color: #fbfbfb;
+    --bg-sidebar-color: #31463B;
+    --bg-input-output-area-color: #31463B;
+    --bg-img-blackboard: url("../Midias/bgBlackboardDefault.png");
+    --border-color: #d5a97c;
+    /*Cores de fundo dos botões*/
+    --bg-function-list-button-color: rgb(67, 135, 175);
+    --bg-number-button-color: #38b6ff;
+    --bg-operator-button-color:#68d3fa;
+    --bg-control-button-color:#002134;
+    /*Cores dos textos dos botões*/
+    --text-function-list-button-color: #000;
+    --text-number-button-color: #000;
+    --text-operator-button-color: #000;
+    --text-control-button-color: #fff;
+    /*Decorações*/
+    --neon-title: #00446c 1px 1px 2px;
+    --text-underline: none;
+    --border-button-hover: #3e47fb 0 0 20px 2px;
+    --bg-button-hover: #4049fa;
+}
+.darkMode:root{
+    /*Cores de texto*/
+    --title-color: #55c1ff;
+    --simpletext-color: #ffffff;
+    --text-blackboard: #fff;
+    /*Cores e imagem de fundo*/
+    --bg-color: #212529;
+    --bg-sidebar-color: #0f0f0f;
+    --bg-input-output-area-color: #323232;
+    --bg-img-blackboard: url("../Midias/bgBlackboardDarkMode.png");
+    --border-color: #d5a97c;
+    /*Cores de fundo dos botões*/
+    --bg-function-list-button-color: #39779a;
+    --bg-number-button-color: #19abff;
+    --bg-operator-button-color:#44cdff;
+    --bg-control-button-color:#002134;
+    /*Cores dos textos dos botões*/
+    --text-function-list-button-color: #000;
+    --text-number-button-color: #000;
+    --text-operator-button-color: #000;
+    --text-control-button-color: #fff;
+    /*Decorações*/
+    --neon-title: #98d9ff 0 0 20px;
+    --text-underline: none;
+    --border-button-hover: #565eff 0 0 20px 2px;
+    --bg-button-hover: #00055c;
+}
+.colorBlindMode:root{
+    /*Cores de texto*/
+    --title-color: #000;
+    --simpletext-color: #000;
+    --text-blackboard: #000;
+    /*Cores e imagem de fundo*/
+    --bg-color: #ffffff; /*DarkMode: #212529*/
+    --bg-sidebar-color: #d5a97c;
+    --bg-input-output-area-color: #cfcfcf;
+    --bg-img-blackboard: url("../Midias/bgBlackboardColorBlindness.png");
+    --border-color: #4a3016;
+    /*Cores de fundo dos botões*/
+    --bg-function-list-button-color: #643200;
+    --bg-number-button-color: #38b6ff;
+    --bg-operator-button-color:#4d0cff;
+    --bg-control-button-color:#002134;
+    /*Cores dos textos dos botões*/
+    --text-function-list-button-color: #fff;
+    --text-number-button-color: #000;
+    --text-operator-button-color: #fff;
+    --text-control-button-color: #fff;
+    /*Decorações*/
+    --neon-title: #fff 0 0 0;
+    --text-underline: underline;
+    --border-button-hover: #2732ff 0 0 10px 3px;
+    --bg-button-hover: #efefff;
+}
+
+/*Configs do site*/
+body{
+    background-color: var(--bg-color);
+    font-family: "Reggae One", Arial, Helvetica, sans-serif;
+    letter-spacing: 0.10rem;
+    color: var(--simpletext-color);
+}
+/*Cabeçalho*/
+#logoContainer {
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url("../Midias/bgBlackboardDefault.png") no-repeat center;
+    background-size: cover;
+    position: relative;
+}
+#Logo {
+    width: 16.5rem;
+    height: fit-content;
+    margin-left: 20%;
+}
+#dropdownColorMode{
+    margin-left: auto;
+    margin-right: 1%;
+}
+#dropdownColorMode .dropdown-toggle{
+    font-size: 3rem;
+    color: #fff;
+    background: none;
+    border: none;
+}
+#NavListDesktop{
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: url("../Midias/bgWood.jpg") no-repeat center center;
+    background-size: cover;
+}
+#NavListDesktop a, #NavListDesktop a:visited{
+    font-size: 1.15rem;
+    text-decoration: var(--text-underline);
+    color: #000;
+    margin: 0.5% 2rem;
+    text-align: center;
+    transition: ease 0.5s;
+}
+#NavListDesktop a:hover{
+    font-weight: bolder;
+    text-shadow: #00e1ff 0.1rem 0 0;
+}
+
+/*Configuração da main*/
+main{
+    display: flex;
+    flex-flow: row;
+}
+
+/*Sidebar*/
+#sidebarContainer{
+    width: 25%;
+    margin-bottom: 0;
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--bg-sidebar-color);
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#sidebarContainer header{
+    display: flex;
+    flex-flow: row;
+}
+#sidebarContainer h2{
+    margin: 5% auto;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    text-decoration: var(--text-underline);
+}
+#sidebarContainer::-webkit-scrollbar{
+    width: 5px;
+    height: 10px;
+    background-color: var(--border-color);
+}
+#functionList{
+    font-family: Arial, Helvetica, sans-serif;
+    display: flex;
+    flex-flow: column wrap;
+    width: 100%;
+    align-items: center;
+    margin: 1.5% 0;
+}
+.btnListFunction{
+    width: 75%;
+    margin-bottom: 3%;
+    background-color: var(--bg-function-list-button-color);
+    color: var(--text-function-list-button-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnListFunction:hover{
+    background-color: var(--bg-button-hover);
+    box-shadow: var(--border-button-hover);
+    color: var(--simpletext-color);
+    text-decoration: var(--text-underline);
+}
+
+/*Conteúdo principal (calculadoras)*/
+#mainContent{
+    display: flex;
+    flex-flow: column nowrap;
+    width: 75%;
+    margin: 1.5% 1% ;
+}
+#mainContent h1{
+    text-shadow: var(--neon-title);
+    font-size: 1.8rem;
+    color: var(--title-color);
+    text-align: center;
+    text-decoration: var(--text-underline);
+    margin: 1.5% auto;
+}
+
+/*Lousas*/
+.blackBoard{
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    background: var(--bg-img-blackboard) no-repeat center right;
+    margin: 1% auto;
+    background-size: cover;
+    border: var(--border-color) solid 5px;
+    width: 93%;
+}
+#blackBoardInput{
+    height: 23vh;
+    
+}
+#blackBoardInput input{
+    background-color: var(--bg-input-output-area-color);
+    color: var(--text-blackboard);
+    font-size: 1.3rem;
+    letter-spacing: 0.12rem;
+    align-self: center;
+    padding: 1%;
+    width: 95%;
+    height: 60%;
+    opacity: 90%;
+}
+#blackBoardOutput{
+    height: 60vh;
+}
+#blackBoardOutput #resultOutput{
+    background-color: var(--bg-input-output-area-color);
+    color: var(--text-blackboard);
+    font-size: 1.3rem;
+    align-self: center;
+    padding: 1.5% 1% 0 1%;
+    border: hwb(0 0% 100% / 0.168) solid 2px;
+    width: 95%;
+    height: 83%;
+    opacity: 90%;
+}
+.blackBoard h3{
+    margin: 1% 0 0.3% 2.5%;
+    font-size: 1.5rem;
+    color: var(--title-color);
+    text-decoration: var(--text-underline);
+}
+#openFunctionList{
+    display: none;
+    width: 75%;
+    margin: 1% auto;
+    background-color: var(--bg-function-list-button-color);
+    color: var(--text-function-list-button-color);
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+/*Botões da calculadora*/
+#buttonList{
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 1rem 5rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0.5rem 0.7rem;
+}
+#buttonList button{
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    height: 6vh;
+    cursor: pointer;
+}
+#buttonList button:hover{
+    background-color: var(--bg-button-hover);
+    box-shadow: var(--border-button-hover);
+    color: var(--simpletext-color);
+    text-decoration: var(--text-underline);
+}
+.btnNumbers{
+    font-size: 1.2rem;
+    background-color: var(--bg-number-button-color);
+    color: var(--text-number-button-color);
+}
+.btnControls{
+    background-color: var(--bg-control-button-color);
+    color: var(--text-control-button-color);
+}
+.btnOperators{
+    background-color: var(--bg-operator-button-color);
+    color: var(--text-operator-button-color);
+}
+.btnFunction{
+    background-color: var(--bg-function-list-button-color);
+    color: var(--text-function-list-button-color);
+}
+
+/*Tabela descritiva*/
+#tableDescriptionContainer{
+    display: flex;
+    flex-flow: column nowrap;
+    margin: 1% 3%;
+}
+#tableDescriptionContainer h3{
+    text-shadow: var(--neon-title);
+    font-size: 1.5rem;
+    color: var(--title-color);
+    text-decoration: var(--text-underline);
+    margin: 1% auto;
+}
+#buttonListDescription{
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+    margin: 0 3%;
+}
+.btnFunctionDescription{
+    margin: 0.3%;
+    font-size: 0.8rem;
+    background-color: var(--bg-function-list-button-color);
+    color: var(--text-function-list-button-color);
+    padding: 1% 2%;
+    border: 2px solid var(--border-color);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.btnFunctionDescription:hover{
+    background-color: var(--bg-button-hover);
+    box-shadow: var(--border-button-hover);
+    color: var(--simpletext-color);
+    text-decoration: var(--text-underline);
+}
+#tableDescriptionContainer table{
+    margin: 2% auto;
+    width: 70vw;
+    border-collapse: collapse;
+    border: var(--border-color) 5px double;
+    font-size: 0.8rem;
+    font-family: Arial, Helvetica, sans-serif;
+    text-decoration: var(--text-underline);
+}
+#tableDescriptionContainer thead{
+    font-size: 1rem;
+    background-color: var(--bg-sidebar-color);
+    color: var(--simpletext-color);
+}
+#tableDescriptionContainer th, #tableDescriptionContainer td{
+    padding: 1% 3%;
+    border: var(--border-color) 2px solid;
+} 
+
+/*Rodapé*/
+footer{
+    width: 100%;
+    height: 10vh;
+    background-color: #171810;
+    margin: 0;
+}
+footer p{
+    color: #db27ff;
+    text-shadow: #ff15cc 0 0 3px;
+    text-align: center;
+    margin: 0;
+    font-size: 1.3rem;
+    padding-top: 1%;
+}
+#bgFooterImg{
+    background: url("../Midias/FooterBgImg.png") no-repeat center top;
+    background-size: cover;
+    width: 100%;
+    height: 75%;
+}
+
+/*Configurações para Responsividade*/
+/*Botão de fechar o menu de funções*/
+#closeFunctionList{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 3%;
+    font-size: 2.3rem;
+    color: #fff;
+    background: none;
+    border: none;
+    display: none;
+}
+/*Escurecer o resto quando abrir o menu de funções*/
+#functionMenuOverlay{
+    display: none;
+}
+#NavListMobile{
+    display: none;
+}
+
+/*Responsividade*/
+/*Tamanho para arrumar o texto da navbar e o título da sidebar*/
+@media (min-width:970px) and (max-width:1232px){
+    #NavListDesktop a, #NavListDesktop a:visited{
+        margin: 0.5% 1rem;
+    }
+    #sidebarContainer h2{
+        font-size: 1.2rem;
+    }
+}
+/*Tamanho para esconder a navbar e a sidebar*/
+@media (max-width:970px){
+    #NavListDesktop{
+        display: none;
+    }
+    #NavListMobile{
+        display: block;
+        height: 6vh;
+        align-items: center;
+        background: url("../Midias/bgWood.jpg") no-repeat center center;
+        background-size: cover;
+    }
+    #NavListMobile .dropdown-toggle{
+        font-size: 1.5rem;
+        margin-left:3%;
+        color: #000;
+        background: none;
+        border: none;
+    }
+    #NavListMobile .dropdown-menu{
+        width: 70vw;
+    }
+    #NavListMobile a, #NavListMobile a:visited{
+        font-size: 1rem;
+        margin-left: 3%;
+        text-decoration: var(--text-underline);
+        color: #000;
+        transition: ease 0.5s;
+    }
+    #NavListMobile a:hover{
+        font-weight: bolder;
+        text-shadow: #00e1ff 0.1rem 0 0;
+    }
+    
+    #functionMenuOverlay{
+        position: fixed;
+        display: block;
+        width: 50%;
+        height: 100%;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        background-color: #000;
+        opacity: 60%;
+    }
+    #sidebarContainer{
+        width: 50%;
+        height: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 999;
+    }
+    #sidebarContainer h2{
+        margin-top: 20%;
+    }
+    #closeFunctionList{
+        display: block;
+    }
+    #openFunctionList{
+        display: block;
+    }
+    #sidebarContainer::-webkit-scrollbar-thumb{
+        width: 10px;
+        background-color: var(--simpletext-color);
+    }
+    #mainContent{
+        width: 100%;
+    }
+}
+@media (max-width:600px){
+    body{
+        font-size: 85%;
+    }
+    #Logo{
+        margin-left: 0;
+    }
+    #mainContent h1{
+        font-size: 1.35rem;
+    }
+    #NavListMobile .dropdown-menu{
+        width: 90vw;
+    }
+    #NavListMobile a, #NavListMobile a:visited{
+        margin-left: 2%;
+    }
+    #functionMenuOverlay{
+        width: 40%;
+    }
+    #sidebarContainer{
+        width: 60%;
+    }
+    #closeFunctionList{
+        font-size: 1.5rem;
+    }
+    #sidebarContainer h2{
+        font-size: 1.15rem;
+    }
+    .blackBoard{
+        width: 98%;
+    }
+    #blackBoard h3{
+        font-size: 1.2rem;
+    }
+    #blackBoardInput{
+        height: 20vh;
+    }
+    #blackBoardInput input{
+        font-size: 0.9rem;
+        height: 60%;
+    }
+    #blackBoardOutput{
+        height: 50vh;
+    }
+    #blackBoardOutput #resultOutput{
+        font-size: 0.9rem;
+        height: 85%;
+    }
+    #buttonList{
+        margin: 1rem 1.5rem;
+    }
+    #tableDescriptionContainer h3{
+        font-size: 1.2rem;
+    }
+    #buttonListDescription{
+        margin: 0 1%;
+    }
+    #tableDescriptionContainer table{
+        margin: 2% auto;
+        width: 95vw;
+    }
+    #tableDescriptionContainer th, #tableDescriptionContainer td{
+        padding: 1%;
+    } 
+    footer p{
+        font-size: 0.8rem;
+    }
+    #bgFooterImg{
+        height: 60%;
+    }
+}

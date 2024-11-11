@@ -14,6 +14,7 @@
     /*Cores de texto*/
     --title-color: #55c1ff;
     --simpletext-color: #000;
+    --text-blackboard: #fff;
     /*Cores e imagem de fundo*/
     --bg-color: #fbfbfb;
     --bg-sidebar-color: #31463B;
@@ -40,6 +41,7 @@
     /*Cores de texto*/
     --title-color: #55c1ff;
     --simpletext-color: #ffffff;
+    --text-blackboard: #fff;
     /*Cores e imagem de fundo*/
     --bg-color: #212529;
     --bg-sidebar-color: #0f0f0f;
@@ -66,6 +68,7 @@
     /*Cores de texto*/
     --title-color: #000;
     --simpletext-color: #000;
+    --text-blackboard: #000;
     /*Cores e imagem de fundo*/
     --bg-color: #ffffff; /*DarkMode: #212529*/
     --bg-sidebar-color: #d5a97c;
@@ -111,11 +114,11 @@ body{
     height: fit-content;
     margin-left: 20%;
 }
-.dropdown {
+#dropdownColorMode{
     margin-left: auto;
     margin-right: 1%;
 }
-.dropdown-toggle {
+#dropdownColorMode .dropdown-toggle{
     font-size: 3rem;
     color: #fff;
     background: none;
@@ -154,7 +157,6 @@ main{
     margin-bottom: 0;
     display: flex;
     flex-flow: column nowrap;
-    align-items: center;
     background-color: var(--bg-sidebar-color);
     overflow: hidden;
     overflow-y: scroll;
@@ -163,20 +165,8 @@ main{
     display: flex;
     flex-flow: row;
 }
-/*Configuração para Responsividade*/
-#closeFunctionList{
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin-right: 2%;
-    font-size: 2.3rem;
-    color: #fff;
-    background: none;
-    border: none;
-    display: none;
-}
 #sidebarContainer h2{
-    margin: 5% 0;
+    margin: 5% auto;
     font-size: 1.5rem;
     color: var(--title-color);
     text-decoration: var(--text-underline);
@@ -209,10 +199,6 @@ main{
     color: var(--simpletext-color);
     text-decoration: var(--text-underline);
 }
-/*Configuração para Responsividade*/
-#functionMenuOverlay{
-    display: none;
-}
 
 /*Conteúdo principal (calculadoras)*/
 #mainContent{
@@ -225,6 +211,7 @@ main{
     text-shadow: var(--neon-title);
     font-size: 1.8rem;
     color: var(--title-color);
+    text-align: center;
     text-decoration: var(--text-underline);
     margin: 1.5% auto;
 }
@@ -234,7 +221,7 @@ main{
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    background: var(--bg-img-blackboard) no-repeat center center;
+    background: var(--bg-img-blackboard) no-repeat center right;
     margin: 2% auto;
     background-size: cover;
     border: var(--border-color) solid 5px;
@@ -249,14 +236,22 @@ main{
 }
 #calcInput{
     background-color: var(--bg-input-output-area-color);
+    color: var(--text-blackboard);
+    font-size: 1.3rem;
     align-self: center;
+    padding: 1%;
     width: 95%;
     height: 40%;
     opacity: 90%;
 }
 #resultOutput{
     background-color: var(--bg-input-output-area-color);
+    color: var(--text-blackboard);
+    border: hwb(0 0% 100% / 0.168) solid 2px;
+    font-size: 1.3rem;
+    align-items: center;
     align-self: center;
+    padding: 1.5% 1% 0 1%;
     width: 95%;
     height: 20%;
     opacity: 90%;
@@ -265,7 +260,6 @@ main{
     display: none;
     width: 75%;
     margin: 1% auto;
-    margin-bottom: 3%;
     background-color: var(--bg-function-list-button-color);
     color: var(--text-function-list-button-color);
     border: 2px solid var(--border-color);
@@ -284,6 +278,7 @@ main{
 #buttonList button{
     border: 2px solid var(--border-color);
     border-radius: 10px;
+    height: 6vh;
     cursor: pointer;
 }
 #buttonList button:hover{
@@ -304,6 +299,10 @@ main{
 .btnOperators{
     background-color: var(--bg-operator-button-color);
     color: var(--text-operator-button-color);
+}
+.btnFunction{
+    background-color: var(--bg-function-list-button-color);
+    color: var(--text-function-list-button-color);
 }
 
 /*Tabela descritiva*/
@@ -329,6 +328,7 @@ main{
     margin: 0.3%;
     font-size: 0.8rem;
     background-color: var(--bg-function-list-button-color);
+    color: var(--text-function-list-button-color);
     padding: 1% 2%;
     border: 2px solid var(--border-color);
     border-radius: 10px;
@@ -357,7 +357,6 @@ main{
 #tableDescriptionContainer th, #tableDescriptionContainer td{
     padding: 1% 3%;
     border: var(--border-color) 2px solid;
-    
 } 
 
 /*Rodapé*/
@@ -382,6 +381,27 @@ footer p{
     height: 75%;
 }
 
+/*Configurações para Responsividade*/
+/*Botão de fechar o menu de funções*/
+#closeFunctionList{
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 3%;
+    font-size: 2.3rem;
+    color: #fff;
+    background: none;
+    border: none;
+    display: none;
+}
+/*Escurecer o resto quando abrir o menu de funções*/
+#functionMenuOverlay{
+    display: none;
+}
+#NavListMobile{
+    display: none;
+}
+
 /*Responsividade*/
 /*Tamanho para arrumar o texto da navbar e o título da sidebar*/
 @media (min-width:970px) and (max-width:1232px){
@@ -392,11 +412,44 @@ footer p{
         font-size: 1.2rem;
     }
 }
+/*Tamanho para esconder a navbar e a sidebar*/
 @media (max-width:970px){
+    #NavListDesktop{
+        display: none;
+    }
+    #NavListMobile{
+        display: block;
+        height: 6vh;
+        align-items: center;
+        background: url("../Midias/bgWood.jpg") no-repeat center center;
+        background-size: cover;
+    }
+    #NavListMobile .dropdown-toggle{
+        font-size: 1.5rem;
+        margin-left:3%;
+        color: #000;
+        background: none;
+        border: none;
+    }
+    #NavListMobile .dropdown-menu{
+        width: 70vw;
+    }
+    #NavListMobile a, #NavListMobile a:visited{
+        font-size: 1rem;
+        margin-left: 3%;
+        text-decoration: var(--text-underline);
+        color: #000;
+        transition: ease 0.5s;
+    }
+    #NavListMobile a:hover{
+        font-weight: bolder;
+        text-shadow: #00e1ff 0.1rem 0 0;
+    }
+    
     #functionMenuOverlay{
         position: fixed;
         display: block;
-        width: 60%;
+        width: 50%;
         height: 100%;
         top: 0;
         right: 0;
@@ -405,13 +458,12 @@ footer p{
         opacity: 60%;
     }
     #sidebarContainer{
-        width: 40%;
+        width: 50%;
         height: 100%;
         position: fixed;
         top: 0;
         left: 0;
         z-index: 999;
-        display: none;
     }
     #sidebarContainer h2{
         margin-top: 20%;
@@ -429,6 +481,71 @@ footer p{
     #mainContent{
         width: 100%;
     }
-
-    /*Style para funções*/
+}
+@media (max-width:600px){
+    body{
+        font-size: 85%;
+    }
+    #Logo{
+        margin-left: 0;
+    }
+    #mainContent h1{
+        font-size: 1.35rem;
+    }
+    #NavListMobile .dropdown-menu{
+        width: 90vw;
+    }
+    #NavListMobile a, #NavListMobile a:visited{
+        margin-left: 2%;
+    }
+    #functionMenuOverlay{
+        width: 40%;
+    }
+    #sidebarContainer{
+        width: 60%;
+    }
+    #closeFunctionList{
+        font-size: 1.5rem;
+    }
+    #sidebarContainer h2{
+        font-size: 1.15rem;
+    }
+    #blackBoard{
+        height: 30vh;
+        width: 98%;
+    }
+    #blackBoard h3{
+        font-size: 1.2rem;
+    }
+    #calcInput{
+        font-size: 0.9rem;
+        height: 30%;
+        letter-spacing: 0.12rem;
+    }
+    #resultOutput{
+        font-size: 1rem;
+        height: 20%;
+    }
+    #buttonList{
+        margin: 1rem 1.5rem;
+    }
+    #tableDescriptionContainer h3{
+        font-size: 1.2rem;
+    }
+    #buttonListDescription{
+        margin: 0 1%;
+    }
+    #tableDescriptionContainer table{
+        margin: 2% auto;
+        width: 95vw;
+    }
+    #tableDescriptionContainer th, #tableDescriptionContainer td{
+        padding: 1%;
+    } 
+    footer p{
+        font-size: 0.8rem;
+    }
+    #bgFooterImg{
+        height: 60%;
+    }
 }
