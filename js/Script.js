@@ -1,21 +1,22 @@
 function clearDisplay() {
-    document.getElementById("display").value = "";
+    document.getElementById("calcInput").value = "";
+    document.getElementById("resultOutput").innerText = "";
 }
 
 function deleteLast() {
-    const display = document.getElementById("display");
+    const display = document.getElementById("calcInput");
     display.value = display.value.slice(0, -1);
 }
 
 function appendValue(value) {
-    document.getElementById("display").value += value;
+    document.getElementById("calcInput").value += value;
 }
 
 function calculate() {
-    const display = document.getElementById("display");
-    const result = document.getElementById("resultado");
+    const display = document.getElementById("calcInput");
+    const result = document.getElementById("resultOutput");
     try {
-        result.value = eval(display.value);
+        result.innerText = eval(display.value);
     } catch (error) {
         display.value = "Erro";
     }
