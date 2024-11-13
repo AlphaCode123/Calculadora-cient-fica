@@ -255,6 +255,18 @@ main{
     width: 95%;
     height: 83%;
     opacity: 90%;
+    overflow: hidden;
+    overflow-y: scroll;
+}
+#blackBoardOutput #resultOutput::-webkit-scrollbar{
+    width: 5px;
+    height: 10px;
+    background-color: var(--bg-input-output-area-color);
+}
+#blackBoardOutput #resultOutput::-webkit-scrollbar-thumb{
+    width: 5px;
+    height: 10px;
+    background-color: var(--simpletext-color);
 }
 .blackBoard h3{
     margin: 1% 0 0.3% 2.5%;
