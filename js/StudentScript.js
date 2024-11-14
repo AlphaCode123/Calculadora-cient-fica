@@ -51,8 +51,8 @@ function resolveParentheses(expression) {
         expression = expression.replace(regex, (match, subExpr) => {
             
             //Exibe o passo e retorna o valor
-            setOutput(`${npasso}º Passo: ${match}`);
-            npasso++;
+            setOutput(`Resolver primeiro: ${match}`);
+            
             //Sempre que adicionar uma operação, inserir ela aqui dentro também
             return resolveOperations(subExpr, ['ê', 'r', '*', '/', '%', '+', '-']);
         });
