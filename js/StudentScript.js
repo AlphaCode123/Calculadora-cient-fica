@@ -34,7 +34,7 @@ function calculate() {
 
     //Resolve operações na ordem
     //Para adicionar uma nova função, é só copiar e colar a de baixo, lembrando que o o operador só pode ter 1 caractere
-    expression = resolveOperations(expression, ['ê']);
+    expression = resolveOperations(expression, ['ê', 'r']);
     expression = resolveOperations(expression, ['*', '/', '%']);
     expression = resolveOperations(expression, ['+', '-']);
 
@@ -54,7 +54,7 @@ function resolveParentheses(expression) {
             setOutput(`${npasso}º Passo: ${match}`);
             npasso++;
             //Sempre que adicionar uma operação, inserir ela aqui dentro também
-            return resolveOperations(subExpr, ['ê', '*', '/', '%', '+', '-']);
+            return resolveOperations(subExpr, ['ê', 'r', '*', '/', '%', '+', '-']);
         });
     }
     return expression;
@@ -70,10 +70,12 @@ function resolveOperations(expression, operators) {
             let result;
             //Com base no operador indicado, calcula a operação
             switch (operator) {
+                case 'l': result = Math.pow((parseFloat(n2)), (1/parseFloat(n1)));
                 case '*': result = parseFloat(n1) * parseFloat(n2); break;
                 case '/': result = parseFloat(n1) / parseFloat(n2); break;
                 case '+': result = parseFloat(n1) + parseFloat(n2); break;
                 case '-': result = parseFloat(n1) - parseFloat(n2); break;
+                case 'r': result = Math.pow((parseFloat(n2)), (1/parseFloat(n1))); break;
                 case 'ê': result = Math.pow(parseFloat(n1), parseFloat(n2)); break;
                 case '%': result = parseFloat(n1) * (parseFloat(n2) / 100); break;
                 //Pode inserir o case com a operação aqui, seguido do break no final
