@@ -47,11 +47,11 @@
         </header>
         <!--Conteúdo principal do site-->
         <main>
-            <!--Sidebar com a lista de funções menos usuais da calculadora-->
-            <div id="sidebarContainer">    
+            <!--Sidebar com a lista de funções menos usuais da calculadora (Sera continuada no 2 semestre)-->
+            <!--div id="sidebarContainer">    
                 <header>
                     <h2>Lista de Funções:</h2>
-                    <!--Item usado para o menu mobile-->
+                    <!Item usado para o menu mobile->
                     <button id="closeFunctionList" onclick="closeFunctionMenu()">X</button>
                 </header>
                 <nav id="functionList">
@@ -76,9 +76,9 @@
                     <button class="btnListFunction" onclick="">Função</button>
                     <button class="btnListFunction" onclick="">Função</button>
                 </nav>
-                <!--Item usado para o menu mobile-->
+                <!-Item usado para o menu mobile->
                 <div id="functionMenuOverlay"></div>
-            </div>
+            </div-->
             <!--Conteúdo principal, com a calculadora e os botões para inserir valores-->
             <div id="mainContent">
                 <h1>Calculadora Básica</h1>
@@ -88,8 +88,8 @@
                     <h3>Resultado:</h3>
                     <div id="resultOutput"></div>
                 </div>
-                <!--Item usado para o menu mobile-->
-                <button id="openFunctionList" onclick="openFunctionMenu()">Lista de funções</button>
+                <!--Item usado para o menu mobile->
+                <button id="openFunctionList" onclick="openFunctionMenu()">Lista de funções</button-->
                 <!--Container de botões da calculadora, com os números, operadores e funções principais-->
                 <div id="buttonList">
                     <!--1 Linha-->
@@ -109,7 +109,7 @@
                     <button class="btnNumbers" onclick="appendValue('2')">2</button>
                     <button class="btnNumbers" onclick="appendValue('3')">3</button>
                     <button class="btnOperators" onclick="appendValue('*')">x</button>
-                    <button class="btnOperators" onclick="appendValue('/')">÷</button>
+                    <button class="btnOperators" onclick="appendValue('/')">/</button>
                     <!--4 Linha-->
                     <button class="btnNumbers" onclick="appendValue('0')">0</button>
                     <button class="btnNumbers" onclick="appendValue('.')">,</button>
@@ -122,16 +122,8 @@
                     <h3>Guia de uso das Funções</h3>
                     <p>Selecione uma função e veja como usar:</p>
                     <div id="buttonListDescription">
-                        <button id="botao1" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao2" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao3" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao4" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao5" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao6" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao7" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao8" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao9" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
-                        <button id="botao10" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Função</button>
+                        <button id="botao1" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">%</button>
+                        <button id="botao2" class="btnFunctionDescription" onclick="addFunctionDescription(this.id)">Rest</button>
                         <!--Se precisar adicionar mais botões, é só copiar e colar. Só precisa mudar o número do Id, pra adicionar, e também adicionar no js-->
                     </div>
                     <table>
