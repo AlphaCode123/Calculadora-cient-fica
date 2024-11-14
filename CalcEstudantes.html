@@ -55,11 +55,11 @@
                     <button id="closeFunctionList" onclick="closeFunctionMenu()">X</button>
                 </header>
                 <nav id="functionList">
-                    <button class="btnListFunction" onclick="">Função</button>
-                    <button class="btnListFunction" onclick="">Função</button>
-                    <button class="btnListFunction" onclick="">Função</button>
-                    <button class="btnListFunction" onclick="">Função</button>
-                    <button class="btnListFunction" onclick="">Função</button>
+                    <div class="col-md-1"><button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal">Regra de 3 D</button></div>
+                    <div class="col-md-1"><button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal2">Regra de 3 I</button></div>
+                    <div class="col-md-1"><button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal3">Prog. Ari.</button></div>
+                    <div class="col-md-1"><button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal4">Prog. Geo.</button></div>
+                    <div class="col-md-1"><button type="button" class="btn btn-success"  data-bs-toggle="modal" data-bs-target="#exampleModal5">Pitagoras.</button></div>
                     <button class="btnListFunction" onclick="">Função</button>
                     <button class="btnListFunction" onclick="">Função</button>
                     <button class="btnListFunction" onclick="">Função</button>
@@ -169,6 +169,122 @@
             <p>
                 &copy; Copyright 2024 - AlphaCode. Todos os direitos reservados.
             </p>
+            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Regra de 3 Diretamente Proporcional</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            A:<input type="text" id="calcInputA">
+                            <br>está para<br>
+                            B:<input type="text" id="calcInputB">
+                            <br>assim como <br>
+                            C:<input type="text" id="calcInputC">
+                            <br>está para<br>
+                            X:<input type="text" readonly id="resultOutputRd3D" value="0">
+                            <br><button id="CalculaRD3D" onclick="Calcularegrade3D()">Calcular</button>
+                            
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal2" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Regra de 3 inversamente proporcional</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            A:<input type="text" id="calcInputARD3I">
+                            <br>está para<br>
+                            B:<input type="text" id="calcInputBRD3I">
+                            <br>assim como <br>
+                            C:<input type="text" id="calcInputCRD3I">
+                            <br>está para<br>
+                            X:<input type="text" readonly id="resultOutputRd3I" value="0">
+                            <br><button id="CalculaRD3I" onclick="Calcularegrade3I()">Calcular</button>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal3" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">progressão Aritimétrica</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Valor Inicial:<input type="text" id="calcInputAPA">
+                            <br>(a1)<br>
+                            Razão:<input type="text" id="calcInputBPA">
+                            <br>(r)<br>
+                            Posição a ser encontrada:<input type="text" id="calcInputCPA">
+                            <br>(n)<br>
+                            Valor da posição(an):<input type="text" readonly id="resultOutputPA" value="0">
+                            <br><br><button id="CalculaPA" onclick="CalculaPA()">Calcular</button>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal4" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Progressão Geométrica</h1>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Valor Inicial:<input type="text" id="calcInputAPG">
+                            <br>(a1)<br>
+                            Razão:<input type="text" id="calcInputBPG">
+                            <br>(q)<br>
+                            Posição a ser encontrada:<input type="text" id="calcInputCPG">
+                            <br>(n)<br>
+                            Valor da posição(an):<input type="text" readonly id="resultOutputPG" value="0">
+                            <br><button id="CalculaPG" onclick="CalculaPG()">Calcular</button>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal fade" id="exampleModal5" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h1 class="modal-title fs-5" id="exampleModalLabel">Teorema de Pitágoras="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            Primeiro cateto:<input type="text" id="calcInputAPIT">
+                            <br>(A)<br>
+                            Segundo cateto:<input type="text" id="calcInputBPIT">
+                            <br>(B)<br>
+                            Hipotenusa(C):<input type="text" readonly id="resultOutputPIT" value="0">
+                            <br><button id="CalculaPIT" onclick="CalculaPIT()">Calcular</button>
+                        </div>
+                        
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
             <div id="bgFooterImg"></div>
         </footer>
         <!--Area de Import dos scripts utilizados-->
