@@ -98,6 +98,7 @@ body{
     font-family: "Reggae One", Arial, Helvetica, sans-serif;
     letter-spacing: 0.10rem;
     color: var(--simpletext-color);
+    
 }
 /*Cabeçalho*/
 #logoContainer {
@@ -149,6 +150,7 @@ body{
 main{
     display: flex;
     flex-flow: row;
+    font-size: 110%;
 }
 
 /*Sidebar*/
@@ -204,12 +206,12 @@ main{
 #mainContent{
     display: flex;
     flex-flow: column nowrap;
-    width: 75%;
+    width: 100%;/*Aqui precisa mudar para 75% quando for adicionar a sidebar*/
     margin: 1.5% 1% ;
 }
 #mainContent h1{
     text-shadow: var(--neon-title);
-    font-size: 1.8rem;
+    font-size: 2rem;/*Mudar pra 1.8rem*/
     color: var(--title-color);
     text-align: center;
     text-decoration: var(--text-underline);
@@ -313,7 +315,7 @@ main{
 }
 #tableDescriptionContainer h3{
     text-shadow: var(--neon-title);
-    font-size: 1.5rem;
+    font-size: 1.8rem;/*Mudar pra 1.5rem*/
     color: var(--title-color);
     text-decoration: var(--text-underline);
     margin: 2% auto;
@@ -326,7 +328,7 @@ main{
 }
 .btnFunctionDescription{
     margin: 0.3%;
-    font-size: 0.8rem;
+    font-size: 0.9rem;
     background-color: var(--bg-function-list-button-color);
     color: var(--text-function-list-button-color);
     padding: 1% 2%;
@@ -345,7 +347,7 @@ main{
     width: 70vw;
     border-collapse: collapse;
     border: var(--border-color) 5px double;
-    font-size: 0.8rem;
+    font-size: 1rem;/*Mudar pra 0.8rem*/
     font-family: Arial, Helvetica, sans-serif;
     text-decoration: var(--text-underline);
 }
