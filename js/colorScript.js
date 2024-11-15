@@ -46,20 +46,7 @@ function closeFunctionMenu(){
 
 //Lista de valores para a coluna "Nome"
 let nameText = {
-    botao1:"Função 1",
-    botao2:"Função 2",
-    botao3:"Função 3",
-    botao4:"Função 4",
-    botao5:"Função 5",
-    botao6:"Função 6",
-    botao7:"Função 7",
-    botao8:"Função 8",
-    botao9:"Função 9",
-    botao10:"Função 10",
-    //Se precisar adicionar mais botões é só copiar e colar, só precisa mudar o número
-};
-//Lista de valores para a coluna "Descrição"
-let descriptionText = {
+    //Calculadora cientifica (e calculadora básica, pois só tem 2 funções)
     botao1:"Descrição 1",
     botao2:"Descrição 2",
     botao3:"Descrição 3",
@@ -69,21 +56,64 @@ let descriptionText = {
     botao7:"Descrição 7",
     botao8:"Descrição 8",
     botao9:"Descrição 9",
-    botao10:"Descrição 10",
+    //Calculadora pra estudantes
+    botao10:"Descrição",
+    botao11:"Descrição",
+    botao12:"Descrição",
+    botao13:"Descrição",
+    botao14:"Descrição",
+    botao15:"Descrição",
+    botao16:"Descrição",
+    botao17:"Descrição",
+    botao18:"Descrição",
+    //Se precisar adicionar mais botões é só copiar e colar, só precisa mudar o número
+};
+//Lista de valores para a coluna "Descrição"
+let descriptionText = {
+    //Calculadora cientifica (e calculadora básica, pois só tem 2 funções)
+    botao1:"Descrição 1",
+    botao2:"Descrição 2",
+    botao3:"Descrição 3",
+    botao4:"Descrição 4",
+    botao5:"Descrição 5",
+    botao6:"Descrição 6",
+    botao7:"Descrição 7",
+    botao8:"Descrição 8",
+    botao9:"Descrição 9",
+    //Calculadora pra estudantes
+    botao10:"Descrição",
+    botao11:"Descrição",
+    botao12:"Descrição",
+    botao13:"Descrição",
+    botao14:"Descrição",
+    botao15:"Descrição",
+    botao16:"Descrição",
+    botao17:"Descrição",
+    botao18:"Descrição",
     //Se precisar adicionar mais botões é só copiar e colar, só precisa mudar o número
 };
 //Lista de valores para a coluna "Como usar"
 let howtouseText = {
-    botao1:"Guia 1",
-    botao2:"Guia 2",
-    botao3:"Guia 3",
-    botao4:"Guia 4",
-    botao5:"Guia 5",
-    botao6:"Guia 6",
-    botao7:"Guia 7",
-    botao8:"Guia 8",
-    botao9:"Guia 9",
-    botao10:"Guia 10",
+    //Calculadora cientifica (e calculadora básica, pois só tem 2 funções)
+    botao1:"Descrição 1",
+    botao2:"Descrição 2",
+    botao3:"Descrição 3",
+    botao4:"Descrição 4",
+    botao5:"Descrição 5",
+    botao6:"Descrição 6",
+    botao7:"Descrição 7",
+    botao8:"Descrição 8",
+    botao9:"Descrição 9",
+    //Calculadora pra estudantes
+    botao10:"Descrição",
+    botao11:"Descrição",
+    botao12:"Descrição",
+    botao13:"Descrição",
+    botao14:"Descrição",
+    botao15:"Descrição",
+    botao16:"Descrição",
+    botao17:"Descrição",
+    botao18:"Descrição",
     //Se precisar adicionar mais botões é só copiar e colar, só precisa mudar o número
 };
 //Função que adiciona o conteúdo explicativo referente à função clicada
