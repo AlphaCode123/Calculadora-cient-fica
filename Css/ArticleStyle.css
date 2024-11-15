@@ -144,6 +144,11 @@ body{
     font-weight: bolder;
     text-shadow: #00e1ff 0.1rem 0 0;
 }
+#NavListHome{
+    height: 3vh;
+    background: url("../Midias/bgWood.jpg") no-repeat center center;
+    background-size: cover;
+}
 
 /*Configuração da main*/
 main{
@@ -153,16 +158,50 @@ main{
 /*Conteúdo principal (calculadoras)*/
 main h1{
     text-shadow: var(--neon-title);
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--title-color);
     text-align: center;
     text-decoration: var(--text-underline);
-    margin: 2% auto 0.9% auto;
+    margin: 2% auto 0 auto;
 }
 main article{
-    margin: 1.5% 2% ;
+    margin: 1.5% 2% 2% 2%;
     font-family: 'Times New Roman', Times, serif;
     font-size: 1.2rem;
+    display: flex;
+    flex-flow: column nowrap;
+}
+article h2{
+    text-shadow: var(--neon-title);
+    font-family: "Reggae One", Arial, Helvetica, sans-serif;
+    font-size: 1.7rem;
+    color: var(--title-color);
+    text-align: left;
+    text-decoration: var(--text-underline);
+    margin: 0.9% 0 2% 0;
+}
+.Textline{
+    margin: 0.9% 0;
+}
+article h3{
+    font-family: "Reggae One", Arial, Helvetica, sans-serif;
+    font-size: 1.4rem;
+    color: var(--title-color);
+    text-decoration: var(--text-underline);
+    margin:0.5% 0;
+}
+.Textline p{
+    margin: 0;
+}
+.calcTypeHome{
+    margin: 0;
+    font-size: 1.2rem;
+    font-style: italic;
+    color: var(--title-color);
+}
+.calcTypeHome:hover{
+    color: var(--simpletext-color);
+    text-shadow: var(--title-color) 0 0 10px;
 }
 
 /*Rodapé*/
