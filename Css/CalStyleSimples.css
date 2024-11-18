@@ -357,8 +357,9 @@ main{
     color: var(--simpletext-color);
 }
 #tableDescriptionContainer th, #tableDescriptionContainer td{
-    padding: 1% 3%;
+    padding: 1% 2%;
     border: var(--border-color) 2px solid;
+    width: 5%; 
 } 
 
 /*Rodapé*/
