@@ -210,7 +210,7 @@ main{
 }
 #mainContent h1{
     text-shadow: var(--neon-title);
-    font-size: 1.8rem;
+    font-size: 2rem;
     color: var(--title-color);
     text-align: center;
     text-decoration: var(--text-underline);
