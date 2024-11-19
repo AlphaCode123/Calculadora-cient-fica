@@ -206,12 +206,12 @@ main{
 #mainContent{
     display: flex;
     flex-flow: column nowrap;
-    width: 100%;/*Aqui precisa mudar para 75% quando for adicionar a sidebar*/
+    width: 75%;
     margin: 1.5% 1% ;
 }
 #mainContent h1{
     text-shadow: var(--neon-title);
-    font-size: 2rem;/*Mudar pra 1.8rem*/
+    font-size: 2rem;
     color: var(--title-color);
     text-align: center;
     text-decoration: var(--text-underline);

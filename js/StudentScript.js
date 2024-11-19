@@ -82,6 +82,7 @@ function resolveOperations(expression, operators) {
             }
             //Se o operador for algo criado apenas pra facilitar a nossa vida, aqui dá pra alterar pelo padrão
             if(operator=='ê'){operator='^'}
+            if(operator=='r'){operator='√'}
             //Exibe o passo e retorna o valor
             setOutput(`${npasso}º Passo: ${n1} ${operator} ${n2} = ${result}`);
             npasso++;
